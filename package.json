@@ -1,0 +1,29 @@
+{
+  "name": "bookmarklets",
+  "version": "1.0.0",
+  "description": "A collection of bookmarklets that can be packaged and copied.",
+  "license": "MIT",
+  "author": {
+    "email": "jim.salyer@gmail.com",
+    "name": "Jim Salyer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:jimsalyer/bookmarklets"
+  },
+  "scripts": {
+    "format": "npx prettier -c .",
+    "format:fix": "npx prettier -w .",
+    "lint": "npx eslint \"**/*.{cjs,js,mjs}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bookmarklet": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.2.5"
+  }
+}

@@ -2,11 +2,13 @@
   "env": {
     "browser": true,
     "es2021": true,
+    "jest": true,
     "node": true,
     "shared-node-browser": true
   },
   "extends": ["eslint:recommended", "prettier"],
   "rules": {
+    "no-delete-var": "warn",
     "no-unused-vars": "warn"
   }
 }

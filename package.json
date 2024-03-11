@@ -16,7 +16,7 @@
     "format:fix": "npx prettier -w .",
     "lint": "npx eslint \"**/*.{cjs,js,mjs}\"",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "test": "npx jest"
   },
   "dependencies": {
     "bookmarklet": "^3.0.0"

@@ -29,4 +29,4 @@ npm t
 npx bookmarklet source.js
 ```
 
-Use the -d or --demo option to generate a demo HTML page.
+Use the `-d` or `--demo` option to generate a demo HTML page.

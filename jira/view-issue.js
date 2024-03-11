@@ -1,3 +1,10 @@
+// ==Bookmarklet==
+// @name Jira - View Issue
+// @description Browse to a Jira issue through a simple prompt.
+// @repository https://github.com/jimsalyer/bookmarklets
+// @author Jim Salyer
+// ==/Bookmarklet==
+
 (() => {
   const HOST = 'https://jira.efleets.com';
   const DEFAULT_PROJECT = 'EDGE';

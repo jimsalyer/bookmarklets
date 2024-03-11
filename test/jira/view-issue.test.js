@@ -26,7 +26,7 @@ describe('Jira - View Issue', () => {
 
     promptMock.mockReturnValue(issue);
 
-    require('./view-issue');
+    require('../../jira/view-issue');
 
     expect(promptMock).toHaveBeenCalledWith('Enter issue to view');
     expect(assignMock).toHaveBeenCalledWith(
@@ -37,7 +37,7 @@ describe('Jira - View Issue', () => {
   it('presents an error and returns if no issue is entered in the prompt', () => {
     promptMock.mockReturnValue('');
 
-    require('./view-issue');
+    require('../../jira/view-issue');
 
     expect(alertMock).toHaveBeenCalledWith('You must enter an issue to view.');
     expect(assignMock).not.toHaveBeenCalled();
@@ -46,7 +46,7 @@ describe('Jira - View Issue', () => {
   it('presents and error and returns if an invalid issue has been entered in the prompt', () => {
     promptMock.mockReturnValue('invalid');
 
-    require('./view-issue');
+    require('../../jira/view-issue');
 
     expect(alertMock).toHaveBeenCalledWith(
       'You must enter a valid issue to view.',
@@ -57,7 +57,7 @@ describe('Jira - View Issue', () => {
   it('prepends project portion of issue if missing', () => {
     promptMock.mockReturnValue('1');
 
-    require('./view-issue');
+    require('../../jira/view-issue');
 
     expect(assignMock).toHaveBeenCalledWith(
       `https://jira.efleets.com/browse/EDGE-1`,

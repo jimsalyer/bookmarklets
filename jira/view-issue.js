@@ -6,8 +6,8 @@
 // ==/Bookmarklet==
 
 (() => {
-  const HOST = 'https://jira.efleets.com';
-  const DEFAULT_PROJECT = 'EDGE';
+  const HOST = 'https://jira.myhost.com';
+  const DEFAULT_PROJECT = 'PROJECT';
 
   let issue = prompt('Enter issue to view');
   if (!issue) {

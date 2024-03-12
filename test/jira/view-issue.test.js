@@ -30,7 +30,7 @@ describe('Jira - View Issue', () => {
 
     expect(promptMock).toHaveBeenCalledWith('Enter issue to view');
     expect(assignMock).toHaveBeenCalledWith(
-      `https://jira.efleets.com/browse/${issue}`,
+      `https://jira.myhost.com/browse/${issue}`,
     );
   });
 
@@ -60,7 +60,7 @@ describe('Jira - View Issue', () => {
     require('../../jira/view-issue');
 
     expect(assignMock).toHaveBeenCalledWith(
-      `https://jira.efleets.com/browse/EDGE-1`,
+      `https://jira.myhost.com/browse/PROJECT-1`,
     );
   });
 });

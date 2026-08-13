@@ -7,7 +7,7 @@
 
 (() => {
   const HOST = 'https://jira.myhost.com';
-  const DEFAULT_PROJECT = 'PROJECT';
+  const DEFAULT_PROJECT = 'DEFAULT PROJECT';
 
   let issue = prompt('Enter issue to view');
   if (!issue) {

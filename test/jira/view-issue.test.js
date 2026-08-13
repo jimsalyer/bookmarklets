@@ -1,11 +1,17 @@
 describe('Jira - View Issue', () => {
   const defaultWindowLocation = window.location;
 
-  const alertMock = jest.fn();
-  const assignMock = jest.fn();
-  const promptMock = jest.fn();
+  let alertMock;
+  let assignMock;
+  let promptMock;
 
   beforeEach(() => {
+    jest.resetModules();
+    
+    alertMock = jest.fn();
+    assignMock = jest.fn();
+    promptMock = jest.fn();
+    
     delete window.location;
 
     window.location = {
@@ -60,7 +66,7 @@ describe('Jira - View Issue', () => {
     require('../../jira/view-issue');
 
     expect(assignMock).toHaveBeenCalledWith(
-      `https://jira.myhost.com/browse/PROJECT-1`,
+      `https://jira.myhost.com/browse/DEFAULT PROJECT-1`,
     );
   });
 });

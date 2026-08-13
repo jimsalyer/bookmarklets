@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Pointing Poker - Join Session', () => {
   const defaultWindowLocation = window.location;
 

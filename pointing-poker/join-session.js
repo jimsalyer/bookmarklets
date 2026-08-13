@@ -6,6 +6,8 @@
 // ==/Bookmarklet==
 
 (() => {
+  'use strict';
+
   const HOST = 'https://pointingpoker.com';
 
   let session = prompt('Enter a session to join');
@@ -15,7 +17,7 @@
   }
 
   session = session.trim();
-  if (!/^\d+$/.test(session)) {
+  if (!/^\\d+$/.test(session)) {
     alert('You must enter a valid session number to join.');
     return;
   }

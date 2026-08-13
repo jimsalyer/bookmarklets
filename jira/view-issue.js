@@ -6,6 +6,8 @@
 // ==/Bookmarklet==
 
 (() => {
+  'use strict';
+
   const HOST = 'https://jira.myhost.com';
   const DEFAULT_PROJECT = 'PROJECT';
 
@@ -16,12 +18,12 @@
   }
 
   issue = issue.trim();
-  if (!/^([a-z]+-)?\d+$/i.test(issue)) {
+  if (!/^([a-z]+-)?\\d+$/i.test(issue)) {
     alert('You must enter a valid issue to view.');
     return;
   }
 
-  if (/^\d+$/.test(issue)) {
+  if (/^\\d+$/.test(issue)) {
     issue = `${DEFAULT_PROJECT}-${issue}`;
   }
 

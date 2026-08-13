@@ -1,24 +1,18 @@
-describe('Jira - View Issue', () => {
-  const defaultWindowLocation = window.location;
+const { setupBookmarkletTest } = require('../helpers/setup');
 
-  const alertMock = jest.fn();
-  const assignMock = jest.fn();
-  const promptMock = jest.fn();
+describe('Jira - View Issue', () => {
+  let alertMock, assignMock, promptMock, cleanup;
 
   beforeEach(() => {
-    delete window.location;
-
-    window.location = {
-      ...defaultWindowLocation,
-      assign: assignMock,
-    };
-
-    window.alert = alertMock;
-    window.prompt = promptMock;
+    const setup = setupBookmarkletTest();
+    alertMock = setup.alertMock;
+    assignMock = setup.assignMock;
+    promptMock = setup.promptMock;
+    cleanup = setup.cleanup;
   });
 
   afterEach(() => {
-    window.location = defaultWindowLocation;
+    cleanup();
   });
 
   it('navigates to the Jira issue entered in the prompt', () => {

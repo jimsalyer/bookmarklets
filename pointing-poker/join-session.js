@@ -5,6 +5,8 @@
 // @author Jim Salyer
 // ==/Bookmarklet==
 
+'use strict';
+
 (() => {
   const HOST = 'https://pointingpoker.com';
 

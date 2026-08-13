@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Jira - View Issue', () => {
   const defaultWindowLocation = window.location;
 

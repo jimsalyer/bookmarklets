@@ -6,6 +6,8 @@
 // ==/Bookmarklet==
 
 (() => {
+  'use strict';
+
   const HOST = 'https://pointingpoker.com';
 
   let session = prompt('Enter a session to join');
@@ -20,5 +22,5 @@
     return;
   }
 
-  location.assign(`${HOST}/${session}`);
+  window.location.assign(`${HOST}/${session}`);
 })();

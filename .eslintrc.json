@@ -6,9 +6,22 @@
     "node": true,
     "shared-node-browser": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script"
+  },
   "extends": ["eslint:recommended", "prettier"],
   "rules": {
     "no-delete-var": "warn",
-    "no-unused-vars": "warn"
-  }
+    "no-unused-vars": "warn",
+    "strict": ["error", "global"]
+  },
+  "overrides": [
+    {
+      "files": ["jira/**/*.js", "pointing-poker/**/*.js"],
+      "rules": {
+        "strict": ["error", "function"]
+      }
+    }
+  ]
 }

@@ -6,6 +6,8 @@
 // ==/Bookmarklet==
 
 (() => {
+  'use strict';
+
   const HOST = 'https://jira.myhost.com';
   const DEFAULT_PROJECT = 'PROJECT';
 
@@ -25,5 +27,5 @@
     issue = `${DEFAULT_PROJECT}-${issue}`;
   }
 
-  location.assign(`${HOST}/browse/${issue}`);
+  window.location.assign(`${HOST}/browse/${issue}`);
 })();

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of bookmarklets that can be packaged and copied.",
   "license": "MIT",
+  "type": "module",
   "author": {
     "email": "jim.salyer@gmail.com",
     "name": "Jim Salyer"
@@ -14,9 +15,9 @@
   "scripts": {
     "format": "npx prettier -c .",
     "format:fix": "npx prettier -w .",
-    "lint": "npx eslint \"**/*.{cjs,js,mjs}\"",
-    "lint:fix": "npx eslint --fix \"**/*.{cjs,js,mjs}\"",
-    "test": "npx jest"
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint --fix .",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --config jest.config.cjs"
   },
   "dependencies": {
     "bookmarklet": "^3.0.0"

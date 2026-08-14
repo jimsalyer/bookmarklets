@@ -8,19 +8,22 @@
   },
   "parserOptions": {
     "ecmaVersion": 2021,
-    "sourceType": "script"
+    "sourceType": "module"
   },
   "extends": ["eslint:recommended", "prettier"],
   "rules": {
     "no-delete-var": "warn",
     "no-unused-vars": "warn",
-    "strict": ["error", "global"]
+    "strict": ["error", "never"]
   },
   "overrides": [
     {
-      "files": ["jira/**/*.js", "pointing-poker/**/*.js"],
+      "files": ["jest.config.cjs"],
+      "parserOptions": {
+        "sourceType": "script"
+      },
       "rules": {
-        "strict": ["error", "function"]
+        "strict": ["error", "global"]
       }
     }
   ]

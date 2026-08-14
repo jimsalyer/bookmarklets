@@ -1,4 +1,4 @@
-'use strict';
+import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
 
 describe('Jira - View Issue', () => {
   const defaultWindowLocation = window.location;
@@ -23,12 +23,12 @@ describe('Jira - View Issue', () => {
     window.location = defaultWindowLocation;
   });
 
-  it('navigates to the Jira issue entered in the prompt', () => {
+  it('navigates to the Jira issue entered in the prompt', async () => {
     const issue = 'test-1';
 
     promptMock.mockReturnValue(issue);
 
-    require('../../jira/view-issue');
+    await import('../../jira/view-issue.js');
 
     expect(promptMock).toHaveBeenCalledWith('Enter issue to view');
     expect(assignMock).toHaveBeenCalledWith(
@@ -36,19 +36,19 @@ describe('Jira - View Issue', () => {
     );
   });
 
-  it('presents an error and returns if no issue is entered in the prompt', () => {
+  it('presents an error and returns if no issue is entered in the prompt', async () => {
     promptMock.mockReturnValue('');
 
-    require('../../jira/view-issue');
+    await import('../../jira/view-issue.js');
 
     expect(alertMock).toHaveBeenCalledWith('You must enter an issue to view.');
     expect(assignMock).not.toHaveBeenCalled();
   });
 
-  it('presents and error and returns if an invalid issue has been entered in the prompt', () => {
+  it('presents and error and returns if an invalid issue has been entered in the prompt', async () => {
     promptMock.mockReturnValue('invalid');
 
-    require('../../jira/view-issue');
+    await import('../../jira/view-issue.js');
 
     expect(alertMock).toHaveBeenCalledWith(
       'You must enter a valid issue to view.',
@@ -56,10 +56,10 @@ describe('Jira - View Issue', () => {
     expect(assignMock).not.toHaveBeenCalled();
   });
 
-  it('prepends project portion of issue if missing', () => {
+  it('prepends project portion of issue if missing', async () => {
     promptMock.mockReturnValue('1');
 
-    require('../../jira/view-issue');
+    await import('../../jira/view-issue.js');
 
     expect(assignMock).toHaveBeenCalledWith(
       `https://jira.myhost.com/browse/PROJECT-1`,

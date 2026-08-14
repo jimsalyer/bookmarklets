@@ -1,4 +1,4 @@
-'use strict';
+import { afterEach, beforeEach, describe, expect, it, jest } from '@jest/globals';
 
 describe('Pointing Poker - Join Session', () => {
   const defaultWindowLocation = window.location;
@@ -23,12 +23,12 @@ describe('Pointing Poker - Join Session', () => {
     window.location = defaultWindowLocation;
   });
 
-  it('navigates to the Pointing Poker session entered in the prompt', () => {
+  it('navigates to the Pointing Poker session entered in the prompt', async () => {
     const session = '1234';
 
     promptMock.mockReturnValue(session);
 
-    require('../../pointing-poker/join-session');
+    await import('../../pointing-poker/join-session.js');
 
     expect(promptMock).toHaveBeenCalledWith('Enter a session to join');
     expect(assignMock).toHaveBeenCalledWith(
@@ -36,19 +36,19 @@ describe('Pointing Poker - Join Session', () => {
     );
   });
 
-  it('presents an error and returns if no session is entered in the prompt', () => {
+  it('presents an error and returns if no session is entered in the prompt', async () => {
     promptMock.mockReturnValue('');
 
-    require('../../pointing-poker/join-session');
+    await import('../../pointing-poker/join-session.js');
 
     expect(alertMock).toHaveBeenCalledWith('You must enter a session to join.');
     expect(assignMock).not.toHaveBeenCalled();
   });
 
-  it('presents and error and returns if an invalid session has been entered in the prompt', () => {
+  it('presents and error and returns if an invalid session has been entered in the prompt', async () => {
     promptMock.mockReturnValue('invalid');
 
-    require('../../pointing-poker/join-session');
+    await import('../../pointing-poker/join-session.js');
 
     expect(alertMock).toHaveBeenCalledWith(
       'You must enter a valid session number to join.',

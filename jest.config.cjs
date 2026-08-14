@@ -6,6 +6,7 @@ const config = {
     '**/*.{cjs,js,mjs}',
     '!**/coverage/**',
     '!**/jest.config.{cjs,js,mjs}',
+    '!**/eslint.config.{cjs,js,mjs}',
   ],
   coverageThreshold: {
     global: {
